@@ -2,23 +2,20 @@
 ---------------
 **概述**
 
-此脚本源自南琴浪大佬，大佬的脚本已经4年未做修改，近期（2021年3月15日），脚本核心besttrace即将过期，小弟不才，就此更新besttrace核心并且更新了部分失效的节点
+此脚本源自南琴浪大佬，大佬的脚本已经4年未做修改，脚本核心besttrace已于2021年3月15日过期，小弟不才，就此更新besttrace核心并且更新了部分失效的节点
 ~~此版本测试icmp回程，对于部分icmp回程与tcp回程不一致的鸡贼商家，可使用tcp回程版本~~
 
 **更新**
  - 统合tcp和icmp回程，并增加ipv6回程测试
- - 升级besttrace核心版本，避免3月15日的失效提醒
+ - 升级besttrace核心版本，避免失效提醒
  - 加入新的测试节点
  - 更新besttrace到最新1.3.2
  - 修改部分失效节点
  
- **一键脚本**
+ **运行脚本**
  
-    #运行脚本
     wget https://raw.githubusercontent.com/vpsxb/testrace/main/testrace.sh -O testrace.sh && bash testrace.sh
-    #后续运行脚本（再次检查也仅需运行下面代码）
-    bash testrace.sh
-    
+        
 **功能说明**
 
 脚本的安装目录位于 /home/testrace
