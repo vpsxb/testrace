@@ -13,6 +13,7 @@
  - 修改部分失效节点
  
  **一键脚本**
+ 
     #运行脚本
     wget https://raw.githubusercontent.com/vpsxb/testrace/main/testrace.sh -O testrace.sh && bash testrace.sh
     #后续运行脚本（再次检查也仅需运行下面代码）
