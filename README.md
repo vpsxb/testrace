@@ -6,7 +6,7 @@
 ~~此版本测试icmp回程，对于部分icmp回程与tcp回程不一致的鸡贼商家，可使用tcp回程版本~~
 
 **更新**
- - 统合tcp和icmp回程，并增加ipv6回程测试
+ - 统合tcp和icmp回程，并增加ipv6四网回程测试(受限于betstrace，ipv6只支持icmp回程测试)
  - 升级besttrace核心版本，避免失效提醒
  - 加入新的测试节点
  - 更新besttrace到最新1.3.2
@@ -18,8 +18,8 @@
         
 **功能说明**
 
-脚本的安装目录位于 /home/testrace
-测试完成并退出脚本后，会生成测试的记录文件于 /home/testrace/testrace.log
+脚本的安装目录位于 /home/tstrace
+测试完成并退出脚本后，会生成测试的记录文件于 /home/tstrace/testrace.log
 运行脚本后将出现七个个选项，分别为
 
 - 1.选择一个运营商进行测试(tcp)
@@ -34,6 +34,13 @@
 
 其中手动输入的意思为指定IP测试，获取自己ip可前往https://www.ipip.net/
 
+**ARM机器运行**
+
+将/home/tstrace/besttrace目录可执行文件做相应替换即可
+
+    mv /home/tstrace/besttrace/besttracearm /home/tstrace/besttrace/besttrace
+   
+其他架构机器也可做相应替换，本来脚本可以加系统架构判断，但是我懒，而且不会……
 
 ----------
 
