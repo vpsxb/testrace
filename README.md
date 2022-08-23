@@ -7,7 +7,7 @@
 https://github.com/jamespan2012/jcnfbesttrace/tree/jcnfbesttracetcp
 
 **更新**
-
+ - 统合tcp和icmp回程，并增加ipv6回程测试
  - 升级besttrace核心版本，避免3月15日的失效提醒
  - 加入新的测试节点
  - 更新besttrace到最新1.3.2
