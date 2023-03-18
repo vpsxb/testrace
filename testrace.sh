@@ -372,8 +372,8 @@ echo "--------------------------------"
 echo -e "1.选择一个运营商进行测试(tcp)\n2.四网路由快速测试(tcp)\n3.手动输入ip进行测试(tcp)\n4.选择一个运营商进行测试(icmp)\n5.四网路由快速测试(icmp)\n6.手动输入ip进行测试(icmp)\n7.四网IPV6路由测试(icmp):"
 echo "--------------------------------"
 echo -e "广告位:"
-echo "--------------------------------"
-echo -e "垃圾场加速器: https://my.ljcjsq.com/index.php#/register?code=OAM8uBQl "
+echo -e "垃圾场加速器:"
+echo -e "https://my.ljcjsq.com/index.php#/register?code=OAM8uBQl"
 echo "--------------------------------"
 read -p "输入数字以选择:" function
 
