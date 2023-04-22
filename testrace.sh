@@ -31,7 +31,7 @@ directory(){
 	cd /home/tstrace
 }
 install(){
-	[[ ! -d /home/tstrace/besttrace ]] && wget -O BestTrace.tar.gz https://ghproxy.com/https://raw.githubusercontent.com/vpsxb/testrace/main/BestTrace.tar.gz && tar -zxf BestTrace.tar.gz && rm BestTrace.tar.gz
+	[[ ! -d /home/tstrace/besttrace ]] && wget -O BestTrace.tar.gz https://raw.githubusercontent.com/vpsxb/testrace/main/BestTrace.tar.gz && tar -zxf BestTrace.tar.gz && rm BestTrace.tar.gz
 	[[ ! -d /home/tstrace/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
 	chmod -R +x /home/tstrace
 }
