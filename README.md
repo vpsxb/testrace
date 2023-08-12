@@ -6,11 +6,12 @@
 ~~此版本测试icmp回程，对于部分icmp回程与tcp回程不一致的鸡贼商家，可使用tcp回程版本~~
 
 **更新**
- - 统合tcp和icmp回程，并增加ipv6四网回程测试(受限于betstrace，ipv6只支持icmp回程测试)
- - 升级besttrace核心版本，避免失效提醒
- - 加入新的测试节点
- - 更新besttrace到最新1.3.2
+ ~~- 统合tcp和icmp回程，并增加ipv6四网回程测试(受限于betstrace，ipv6只支持icmp回程测试)~~
+ ~~- 升级besttrace核心版本，避免失效提醒~~
+ ~~- 加入新的测试节点~~
+ ~~- 更新besttrace到最新1.3.2~~
  - 修改部分失效节点
+ - 由于besttrace的api调用限制，已将besttrace替换为优秀的开源项目[nexttrace](https://github.com/nxtrace/Ntrace-core)
  
  **运行脚本**
  
@@ -18,8 +19,8 @@
         
 **功能说明**
 
-脚本的安装目录位于 /home/tstrace
-测试完成并退出脚本后，会生成测试的记录文件于 /home/tstrace/testrace.log
+~~脚本的安装目录位于 /home/tstrace~~
+~~测试完成并退出脚本后，会生成测试的记录文件于 /home/tstrace/testrace.log~~
 运行脚本后将出现七个个选项，分别为
 
 - 1.选择一个运营商进行测试(tcp)
@@ -36,11 +37,13 @@
 
 **ARM机器运行**
 
-将/home/tstrace/besttrace目录可执行文件做相应替换即可
+得益于nexttrace优秀的兼容性，直接运行脚本即可。
 
-    mv /home/tstrace/besttrace/besttracearm /home/tstrace/besttrace/besttrace
+~~将/home/tstrace/besttrace目录可执行文件做相应替换即可~~
+
+~~    mv /home/tstrace/besttrace/besttracearm /home/tstrace/besttrace/besttrace ~~
    
-其他架构机器也可做相应替换，本来脚本可以加系统架构判断，但是我懒，而且不会……
+~~其他架构机器也可做相应替换，本来脚本可以加系统架构判断，但是我懒，而且不会……~~
 
 ----------
 
@@ -50,3 +53,7 @@
 南琴浪 https://github.com/nanqinlang-script/testrace
 
 jcnf那坨 https://github.com/Netflixxp/jcnfbesttrace
+
+特别鸣谢
+
+nexttrace https://github.com/nxtrace/Ntrace-core
