@@ -359,7 +359,7 @@ test_allv6(){
 	echo -e "${Info} 路由快速测试 已完成 ！"
 }
 
-check_system
+#check_system
 check_root
 directory
 install
@@ -384,13 +384,13 @@ read -p "输入数字以选择:" function
 	if [[ "${function}" == "1" ]]; then
 		test_alternative_tcp
 	elif [[ "${function}" == "2" ]]; then
-		test_all_tcp | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+		test_all_tcp
 	elif [[ "${function}" == "3" ]]; then
 		test_single_tcp
 	elif [[ "${function}" == "4" ]]; then
 		test_alternative
 	elif [[ "${function}" == "5" ]]; then
-		test_all | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+		test_all
 	elif [[ "${function}" == "6" ]]; then
 		test_single
 	elif [[ "${function}" == "7" ]]; then
