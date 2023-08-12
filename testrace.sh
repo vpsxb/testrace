@@ -27,13 +27,11 @@ check_root(){
 	[[ "`id -u`" != "0" ]] && echo -e "${Error} must be root user !" && exit 1
 }
 directory(){
-	[[ ! -d /home/tstrace ]] && mkdir -p /home/tstrace
-	cd /home/tstrace
+	cd /usr/local/bin
 }
 install(){
-	[[ ! -d /home/tstrace/besttrace ]] && wget -O BestTrace.tar.gz https://ghproxy.com/https://raw.githubusercontent.com/vpsxb/testrace/main/BestTrace.tar.gz && tar -zxf BestTrace.tar.gz && rm BestTrace.tar.gz
-	[[ ! -d /home/tstrace/besttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
-	chmod -R +x /home/tstrace
+	[[ ! -f /usr/local/bin/nexttrace ]] && bash <(curl -Ls https://raw.githubusercontent.com/sjlleo/nexttrace/main/nt_install.sh)
+	[[ ! -f /usr/local/bin/nexttrace ]] && echo -e "${Error} download failed, please check!" && exit 1
 }
 
 
@@ -48,7 +46,7 @@ test_single_tcp(){
 			echo -e "${Info} 请重新输入" && read -p "输入 ip 地址:" ip
 		done
 
-	./besttrace -T -q1 -g cn ${ip} | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+	./nexttrace -T -q 1 -g cn ${ip}
 
 	repeat_test_single_tcp
 }
@@ -142,7 +140,7 @@ node_4(){
 }
 result_alternative_tcp(){
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./besttrace -T -q1  -g cn ${ip} | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+	./nexttrace -T -q 1  -g cn ${ip}
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 
 	repeat_test_alternative_tcp
@@ -177,7 +175,7 @@ test_all_tcp(){
 result_all_tcp(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./besttrace -T -q1  -g cn $1
+	./nexttrace -T -q 1  -g cn $1
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
@@ -204,7 +202,7 @@ test_single(){
 			echo -e "${Info} 请重新输入" && read -p "输入 ip 地址:" ip
 		done
 
-	./besttrace -q1 -g cn ${ip} | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+	./nexttrace -q 1 -g cn ${ip}
 
 	repeat_test_single
 }
@@ -298,7 +296,7 @@ node_4(){
 }
 result_alternative(){
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./besttrace -q1  -g cn ${ip} | tee -a -i /home/tstrace/tstrace.log 2>/dev/null
+	./nexttrace -q 1  -g cn ${ip}
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 
 	repeat_test_alternative
@@ -333,7 +331,7 @@ test_all(){
 result_all(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./besttrace -q1 -g cn $1
+	./nexttrace -q 1 -g cn $1
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
@@ -365,7 +363,7 @@ check_system
 check_root
 directory
 install
-cd besttrace
+cd /usr/local/bin
 
 echo -e "${Info} 选择你要使用的功能: "
 echo "--------------------------------"
@@ -373,7 +371,7 @@ echo -e "1.选择一个运营商进行测试(tcp)\n2.四网路由快速测试(tc
 echo "--------------------------------"
 echo -e "广告位:"
 echo -e "垃圾场加速器:"
-echo -e "https://my.ljcjsq.com/index.php#/register?code=OAM8uBQl"
+echo -e "https://my.ljcjsq.xyz/index.php#/register?code=OAM8uBQl"
 echo "--------------------------------"
 read -p "输入数字以选择:" function
 
