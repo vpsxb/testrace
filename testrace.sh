@@ -371,7 +371,7 @@ echo -e "1.选择一个运营商进行测试(tcp)\n2.四网路由快速测试(tc
 echo "--------------------------------"
 echo -e "广告位:"
 echo -e "垃圾场加速器:"
-echo -e "https://my.ljcjsq.xyz/index.php#/register?code=OAM8uBQl"
+echo -e "https://lajic.eu/index.php#/register?code=OAM8uBQl"
 echo "--------------------------------"
 read -p "输入数字以选择:" function
 
