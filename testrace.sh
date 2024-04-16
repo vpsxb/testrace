@@ -275,7 +275,7 @@ node_2(){
 	[[ "${node}" == "7" ]] && ISP_name="上海联通9929" 	&& ip=ipv4.sha-9929.endpoint.nxtrace.org
 }
 node_3(){
-	echo -e "1.上海移动\n2.广州移动\n3.北京移动\n4.嘉兴移动\n5.杭州移动" && read -p "输入数字以选择:" node
+	echo -e "1.上海移动\n2.广州移动\n3.北京移动\n4.广移V6\n5.杭州移动" && read -p "输入数字以选择:" node
 
 	while [[ ! "${node}" =~ ^[1-5]$ ]]
 		do
@@ -285,9 +285,8 @@ node_3(){
 
 	[[ "${node}" == "1" ]] && ISP_name="上海移动" && ip=ipv4.sha-9808.endpoint.nxtrace.org
 	[[ "${node}" == "2" ]] && ISP_name="广州移动" && ip=ipv4.can-9808.endpoint.nxtrace.org
-	 [[ "${node}" == "2" ]] && ISP_name="广移V6" && ip=ipv6.can-9808.endpoint.nxtrace.org
 	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=ipv4.pek-9808.endpoint.nxtrace.org
-	[[ "${node}" == "4" ]] && ISP_name="嘉兴移动" && ip=223.95.245.102
+	[[ "${node}" == "4" ]] && ISP_name="广移V6" && ip=ipv6.can-9808.endpoint.nxtrace.org
 	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=ipv4.hgh-9808.endpoint.nxtrace.org
 }
 node_4(){
