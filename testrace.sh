@@ -285,6 +285,7 @@ node_3(){
 
 	[[ "${node}" == "1" ]] && ISP_name="上海移动" && ip=ipv4.sha-9808.endpoint.nxtrace.org
 	[[ "${node}" == "2" ]] && ISP_name="广州移动" && ip=ipv4.can-9808.endpoint.nxtrace.org
+	 [[ "${node}" == "2" ]] && ISP_name="广移V6" && ip=ipv6.can-9808.endpoint.nxtrace.org
 	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=ipv4.pek-9808.endpoint.nxtrace.org
 	[[ "${node}" == "4" ]] && ISP_name="嘉兴移动" && ip=223.95.245.102
 	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=ipv4.hgh-9808.endpoint.nxtrace.org
