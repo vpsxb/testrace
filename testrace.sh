@@ -87,7 +87,7 @@ set_alternative_tcp(){
 	[[ "${ISP}" == "4" ]] && node_4
 }
 node_1(){
-	echo -e "1.上海电信\n2.上海CN2\n3.厦门CN2\n4.杭州电信\n5.嘉兴电信\n6.广州电信(天翼云)\n7.云南昆明电信" && read -p "输入数字以选择:" node
+	echo -e "1.上海电信\n2.上海CN2\n3.厦门CN2\n4.杭州电信\n5.嘉兴电信\n6.广州电信(天翼云)\n7.北京电信" && read -p "输入数字以选择:" node
 
 	while [[ ! "${node}" =~ ^[1-7]$ ]]
 		do
@@ -95,16 +95,16 @@ node_1(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="上海电信"              && ip=101.95.206.10
-	[[ "${node}" == "2" ]] && ISP_name="上海CN2"	       && ip=58.32.0.1
-	[[ "${node}" == "3" ]] && ISP_name="厦门CN2"	     && ip=117.28.254.129
-	[[ "${node}" == "4" ]] && ISP_name="杭州电信"	     && ip=220.191.200.25
-	[[ "${node}" == "5" ]] && ISP_name="嘉兴电信"	     && ip=183.134.62.129
-	[[ "${node}" == "6" ]] && ISP_name="广州电信(天翼云)" && ip=14.215.116.1
-	[[ "${node}" == "7" ]] && ISP_name="云南昆明电信"         && ip=116.55.247.129
+	[[ "${node}" == "1" ]] && ISP_name="上海电信"		&& ip=ipv4.sha-4134.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="上海CN2"		&& ip=ipv4.sha-4809.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="厦门CN2"		&& ip=117.28.254.129
+	[[ "${node}" == "4" ]] && ISP_name="杭州电信"		&& ip=ipv4.hgh-4134.endpoint.nxtrace.org
+	[[ "${node}" == "5" ]] && ISP_name="嘉兴电信"		&& ip=183.134.62.129
+	[[ "${node}" == "6" ]] && ISP_name="广州电信"		&& ip=ipv4.can-4134.endpoint.nxtrace.org
+	[[ "${node}" == "7" ]] && ISP_name="北京电信"		&& ip=ipv4.pek-4134.endpoint.nxtrace.org
 }
 node_2(){
-	echo -e "1.深圳联通\n2.北京联通\n3.杭州联通\n4.安徽合肥联通\n5.嘉兴联通\n6.上海联通\n7.上海联通9929" && read -p "输入数字以选择:" node
+	echo -e "1.广州联通\n2.北京联通\n3.杭州联通\n4.安徽合肥联通\n5.嘉兴联通\n6.上海联通\n7.上海联通9929" && read -p "输入数字以选择:" node
 
 	while [[ ! "${node}" =~ ^[1-7]$ ]]
 		do
@@ -112,13 +112,13 @@ node_2(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="深圳联通" && ip=210.21.196.6
-	[[ "${node}" == "2" ]] && ISP_name="北京联通"     && ip=202.106.50.1
-	[[ "${node}" == "3" ]] && ISP_name="杭州联通" && ip=219.158.105.153
-	[[ "${node}" == "4" ]] && ISP_name="安徽合肥联通" && ip=112.122.10.26
-	[[ "${node}" == "5" ]] && ISP_name="嘉兴联通" && ip=60.12.95.255
-	[[ "${node}" == "6" ]] && ISP_name="上海联通" && ip=139.226.227.38
-	[[ "${node}" == "7" ]] && ISP_name="上海联通9929" && ip=210.13.66.238
+	[[ "${node}" == "1" ]] && ISP_name="广州联通" 		&& ip=ipv4.can-4837.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="北京联通"		&& ip=ipv4.pek-4837.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="杭州联通" 		&& ip=ipv4.hgh-4837.endpoint.nxtrace.org
+	[[ "${node}" == "4" ]] && ISP_name="安徽合肥联通" 	&& ip=112.122.10.26
+	[[ "${node}" == "5" ]] && ISP_name="嘉兴联通" 		&& ip=60.12.95.255
+	[[ "${node}" == "6" ]] && ISP_name="上海联通" 		&& ip=ipv4.sha-4837.endpoint.nxtrace.org
+	[[ "${node}" == "7" ]] && ISP_name="上海联通9929" 	&& ip=ipv4.sha-9929.endpoint.nxtrace.org
 }
 node_3(){
 	echo -e "1.上海移动\n2.深圳移动\n3.北京移动\n4.嘉兴移动\n5.杭州移动" && read -p "输入数字以选择:" node
@@ -129,11 +129,11 @@ node_3(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="上海移动"     && ip=211.136.112.200
-	[[ "${node}" == "2" ]] && ISP_name="深圳移动" && ip=120.196.165.24
-	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=221.179.155.161
+	[[ "${node}" == "1" ]] && ISP_name="上海移动" && ip=ipv4.sha-9808.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="广州移动" && ip=ipv4.can-9808.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=ipv4.pek-9808.endpoint.nxtrace.org
 	[[ "${node}" == "4" ]] && ISP_name="嘉兴移动" && ip=223.95.245.102
-	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=221.183.94.137
+	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=ipv4.hgh-9808.endpoint.nxtrace.org
 }
 node_4(){
 	ISP_name="北京教育网" && ip=101.4.117.213
@@ -161,14 +161,13 @@ repeat_test_alternative_tcp(){
 
 
 test_all_tcp(){
-	result_all_tcp	'101.95.206.10'	'上海电信'
-	result_all_tcp	'58.32.0.1'	'上海CN2'
-
-	result_all_tcp	'139.226.227.38'   	'上海联通'
-     result_all_tcp	'210.13.66.238'   	'上海联通9929'
-	result_all_tcp	'211.136.112.200'	'上海移动'
-
-	result_all_tcp	'101.4.117.213'		'北京教育网'
+	result_all_tcp	'ipv4.sha-4134.endpoint.nxtrace.org'	'上海电信'
+	result_all_tcp	'ipv4.sha-4809.endpoint.nxtrace.org'	'上海CN2'
+	result_all_tcp	'ipv4.sha-4837.endpoint.nxtrace.org'   	'上海联通'
+     	result_all_tcp	'ipv4.sha-9929.endpoint.nxtrace.org'   	'上海联通9929'
+	result_all_tcp	'ipv4.sha-9808.endpoint.nxtrace.org'	'上海移动'
+	result_all_tcp	'ipv4.can-9808.endpoint.nxtrace.org'	'上海移动'
+	result_all_tcp	'ipv4.hgh-4538.endpoint.nxtrace.org'	'杭州教育网'
 
 	echo -e "${Info} 四网路由快速测试 已完成 ！"
 }
@@ -180,14 +179,13 @@ result_all_tcp(){
 }
 
 test_all_tcp(){
-	result_all_tcp	'101.95.206.10'	'上海电信'
-	result_all_tcp	'58.32.0.1'	'上海CN2'
-
-	result_all_tcp	'139.226.227.38'   	'上海联通'
-     result_all_tcp	'210.13.66.238'   	'上海联通9929'
-	result_all_tcp	'211.136.112.200'	'上海移动'
-
-	result_all_tcp	'101.4.117.213'		'北京教育网'
+	result_all_tcp	'ipv4.sha-4134.endpoint.nxtrace.org'	'上海电信'
+	result_all_tcp	'ipv4.sha-4809.endpoint.nxtrace.org'	'上海CN2'
+	result_all_tcp	'ipv4.sha-4837.endpoint.nxtrace.org'   	'上海联通'
+     	result_all_tcp	'ipv4.sha-9929.endpoint.nxtrace.org'   	'上海联通9929'
+	result_all_tcp	'ipv4.sha-9808.endpoint.nxtrace.org'	'上海移动'
+	result_all_tcp	'ipv4.can-9808.endpoint.nxtrace.org'	'上海移动'
+	result_all_tcp	'ipv4.hgh-4538.endpoint.nxtrace.org'	'杭州教育网'
 
 	echo -e "${Info} 四网路由快速测试 已完成 ！"
 }
@@ -243,7 +241,7 @@ set_alternative(){
 	[[ "${ISP}" == "4" ]] && node_4
 }
 node_1(){
-	echo -e "1.上海电信\n2.上海CN2\n3.厦门CN2\n4.杭州电信\n5.嘉兴电信\n6.广州电信(天翼云)\n7.云南昆明电信" && read -p "输入数字以选择:" node
+	echo -e "1.上海电信\n2.上海CN2\n3.厦门CN2\n4.杭州电信\n5.嘉兴电信\n6.广州电信\n7.北京电信" && read -p "输入数字以选择:" node
 
 	while [[ ! "${node}" =~ ^[1-7]$ ]]
 		do
@@ -251,13 +249,13 @@ node_1(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="上海电信"              && ip=101.95.206.10
-	[[ "${node}" == "2" ]] && ISP_name="上海CN2"	       && ip=58.32.0.1
-	[[ "${node}" == "3" ]] && ISP_name="厦门CN2"	     && ip=117.28.254.129
-	[[ "${node}" == "4" ]] && ISP_name="杭州电信"	     && ip=220.191.200.25
-	[[ "${node}" == "5" ]] && ISP_name="嘉兴电信"	     && ip=183.134.62.129
-	[[ "${node}" == "6" ]] && ISP_name="广州电信(天翼云)" && ip=14.215.116.1
-	[[ "${node}" == "7" ]] && ISP_name="云南昆明电信"         && ip=116.55.247.129
+	[[ "${node}" == "1" ]] && ISP_name="上海电信"		&& ip=ipv4.sha-4134.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="上海CN2"		&& ip=ipv4.sha-4809.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="厦门CN2"		&& ip=117.28.254.129
+	[[ "${node}" == "4" ]] && ISP_name="杭州电信"		&& ip=ipv4.hgh-4134.endpoint.nxtrace.org
+	[[ "${node}" == "5" ]] && ISP_name="嘉兴电信"		&& ip=183.134.62.129
+	[[ "${node}" == "6" ]] && ISP_name="广州电信"		&& ip=ipv4.can-4134.endpoint.nxtrace.org
+	[[ "${node}" == "7" ]] && ISP_name="北京电信"		&& ip=ipv4.pek-4134.endpoint.nxtrace.org
 }
 node_2(){
 	echo -e "1.深圳联通\n2.北京联通\n3.杭州联通\n4.安徽合肥联通\n5.嘉兴联通\n6.上海联通\n7.上海联通9929" && read -p "输入数字以选择:" node
@@ -268,16 +266,16 @@ node_2(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="深圳联通" && ip=210.21.196.6
-	[[ "${node}" == "2" ]] && ISP_name="北京联通"     && ip=202.106.50.1
-	[[ "${node}" == "3" ]] && ISP_name="杭州联通" && ip=219.158.105.153
-	[[ "${node}" == "4" ]] && ISP_name="安徽合肥联通" && ip=112.122.10.26
-	[[ "${node}" == "5" ]] && ISP_name="嘉兴联通" && ip=60.12.95.255
-	[[ "${node}" == "6" ]] && ISP_name="上海联通" && ip=139.226.227.38
-	[[ "${node}" == "7" ]] && ISP_name="上海联通9929" && ip=210.13.66.238
+	[[ "${node}" == "1" ]] && ISP_name="广州联通" 		&& ip=ipv4.can-4837.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="北京联通"		&& ip=ipv4.pek-4837.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="杭州联通" 		&& ip=ipv4.hgh-4837.endpoint.nxtrace.org
+	[[ "${node}" == "4" ]] && ISP_name="安徽合肥联通" 	&& ip=112.122.10.26
+	[[ "${node}" == "5" ]] && ISP_name="嘉兴联通" 		&& ip=60.12.95.255
+	[[ "${node}" == "6" ]] && ISP_name="上海联通" 		&& ip=ipv4.sha-4837.endpoint.nxtrace.org
+	[[ "${node}" == "7" ]] && ISP_name="上海联通9929" 	&& ip=ipv4.sha-9929.endpoint.nxtrace.org
 }
 node_3(){
-	echo -e "1.上海移动\n2.深圳移动\n3.北京移动\n4.嘉兴移动\n5.杭州移动" && read -p "输入数字以选择:" node
+	echo -e "1.上海移动\n2.广州移动\n3.北京移动\n4.嘉兴移动\n5.杭州移动" && read -p "输入数字以选择:" node
 
 	while [[ ! "${node}" =~ ^[1-5]$ ]]
 		do
@@ -285,11 +283,11 @@ node_3(){
 			echo -e "${Info} 请重新选择" && read -p "输入数字以选择:" node
 		done
 
-	[[ "${node}" == "1" ]] && ISP_name="上海移动"     && ip=211.136.112.200
-	[[ "${node}" == "2" ]] && ISP_name="深圳移动" && ip=120.196.165.24
-	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=221.179.155.161
+	[[ "${node}" == "1" ]] && ISP_name="上海移动" && ip=ipv4.sha-9808.endpoint.nxtrace.org
+	[[ "${node}" == "2" ]] && ISP_name="广州移动" && ip=ipv4.can-9808.endpoint.nxtrace.org
+	[[ "${node}" == "3" ]] && ISP_name="北京移动" && ip=ipv4.pek-9808.endpoint.nxtrace.org
 	[[ "${node}" == "4" ]] && ISP_name="嘉兴移动" && ip=223.95.245.102
-	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=221.183.94.137
+	[[ "${node}" == "5" ]] && ISP_name="杭州移动" && ip=ipv4.hgh-9808.endpoint.nxtrace.org
 }
 node_4(){
 	ISP_name="北京教育网" && ip=101.4.117.213
@@ -317,14 +315,13 @@ repeat_test_alternative(){
 
 
 test_all(){
-	result_all	'101.95.206.10'	'上海电信'
-	result_all	'58.32.0.1'	     '上海CN2'
-
-	result_all	'139.226.227.38'   	'上海联通'
-     result_all	'210.13.66.238'   	'上海联通9929'
-	result_all	'211.136.112.200'	'上海移动'
-
-	result_all	'101.4.117.213'    '北京教育网'
+	result_all	'ipv4.sha-4134.endpoint.nxtrace.org'		'上海电信'
+	result_all	'ipv4.sha-4809.endpoint.nxtrace.org'	     	'上海CN2'
+	result_all	'ipv4.sha-4837.endpoint.nxtrace.org' 	  	'上海联通'
+	result_all	'ipv4.sha-9929.endpoint.nxtrace.org'  	 	'上海联通9929'
+	result_all	'ipv4.sha-9808.endpoint.nxtrace.org'		'上海移动'
+ 	result_all	'ipv4.can-9808.endpoint.nxtrace.org'		'广州移动'
+	result_all	'ipv4.hgh-4538.endpoint.nxtrace.org'    	'杭州教育网'
 
 	echo -e "${Info} 四网路由快速测试 已完成 ！"
 }
@@ -336,24 +333,24 @@ result_all(){
 }
 
 test_all(){
-	result_all	'101.95.206.10'	'上海电信'
-	result_all	'58.32.0.1'	     '上海CN2'
-
-	result_all	'139.226.227.38'   	'上海联通'
-     result_all	'210.13.66.238'   	'上海联通9929'
-	result_all	'211.136.112.200'	'上海移动'
-
-	result_all	'101.4.117.213'	'北京教育网'
+	result_all	'ipv4.sha-4134.endpoint.nxtrace.org'		'上海电信'
+	result_all	'ipv4.sha-4809.endpoint.nxtrace.org'	     	'上海CN2'
+	result_all	'ipv4.sha-4837.endpoint.nxtrace.org' 	  	'上海联通'
+	result_all	'ipv4.sha-9929.endpoint.nxtrace.org'  	 	'上海联通9929'
+	result_all	'ipv4.sha-9808.endpoint.nxtrace.org'		'上海移动'
+ 	result_all	'ipv4.can-9808.endpoint.nxtrace.org'		'广州移动'
+	result_all	'ipv4.hgh-4538.endpoint.nxtrace.org'    	'杭州教育网'
 
 	echo -e "${Info} 四网路由快速测试 已完成 ！"
 }
 
 test_allv6(){
-	result_all	'2405:7040:6000::1'	'上海电信'
+	result_all	'ipv6.sha-4134.endpoint.nxtrace.org'	'上海电信'
 #	result_all	'58.32.0.1'	     '上海CN2'
-	result_all	'2408:8001:20f0:1::211'   	'长沙联通'
-    result_all	'2408:8120:2::5ee'   	'联通9929'
-	result_all	'2409:8028:2000::1111'	'浙江移动'
+	result_all	'ipv6.sha-4837.endpoint.nxtrace.org'   	'上海联通'
+ 	result_all	'ipv6.sha-9929.endpoint.nxtrace.org'   	'上海9929'
+	result_all	'ipv6.sha-9808.endpoint.nxtrace.org'	'上海移动'
+ 	result_all	'ipv6.can-9808.endpoint.nxtrace.org'	'广州移动'
 	result_all	'2001:da8:8000:12d::2'	'教育网'
 
 	echo -e "${Info} 路由快速测试 已完成 ！"
