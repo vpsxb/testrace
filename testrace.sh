@@ -184,7 +184,7 @@ test_all_tcp(){
 	result_all_tcp	'ipv4.sha-4837.endpoint.nxtrace.org'   	'上海联通'
      	result_all_tcp	'ipv4.sha-9929.endpoint.nxtrace.org'   	'上海联通9929'
 	result_all_tcp	'ipv4.sha-9808.endpoint.nxtrace.org'	'上海移动'
-	result_all_tcp	'ipv4.can-9808.endpoint.nxtrace.org'	'上海移动'
+	result_all_tcp	'ipv4.can-9808.endpoint.nxtrace.org'	'广州移动'
 	result_all_tcp	'ipv4.hgh-4538.endpoint.nxtrace.org'	'杭州教育网'
 
 	echo -e "${Info} 四网路由快速测试 已完成 ！"
