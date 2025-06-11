@@ -46,7 +46,13 @@ test_single_tcp(){
 			echo -e "${Info} 请重新输入" && read -p "输入 ip 地址:" ip
 		done
 
-	./nexttrace -T -q 1 -g cn ${ip} | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -T -q 1 -g cn ${ip} | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 
 	repeat_test_single_tcp
 }
@@ -140,7 +146,13 @@ node_4(){
 }
 result_alternative_tcp(){
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./nexttrace -T -q 1  -g cn ${ip} | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -T -q 1  -g cn ${ip} | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 
 	repeat_test_alternative_tcp
@@ -174,7 +186,13 @@ test_all_tcp(){
 result_all_tcp(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./nexttrace -T -q 1  -g cn $1 | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -T -q 1  -g cn $1 | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
@@ -200,7 +218,13 @@ test_single(){
 			echo -e "${Info} 请重新输入" && read -p "输入 ip 地址:" ip
 		done
 
-	./nexttrace -q 1 -g cn ${ip} | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -q 1 -g cn ${ip} | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 
 	repeat_test_single
 }
@@ -294,7 +318,13 @@ node_4(){
 }
 result_alternative(){
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./nexttrace -q 1  -g cn ${ip} | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -q 1  -g cn ${ip} | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 
 	repeat_test_alternative
@@ -328,7 +358,13 @@ test_all(){
 result_all(){
 	ISP_name=$2
 	echo -e "${Info} 测试路由 到 ${ISP_name} 中 ..."
-	./nexttrace -q 1 -g cn $1 | awk '!/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ && !/^[[:space:]]*\*[[:space:]]*$/ && /([0-9]{1,3}\.){3}[0-9]{1,3}|AS[0-9]+/'
+	./nexttrace -q 1 -g cn $1 | awk '
+        # 基础过滤：移除纯数字+*或纯*的行
+        !/^[[:space:]]*[0-9]+[[:space:]]+\*[[:space:]]*$/ &&
+        !/^[[:space:]]*\*[[:space:]]*$/ &&
+        # 保留条件：包含IP、AS号、主机名或延迟时间
+        (/([0-9]{1,3}\.){3}[0-9]{1,3}/ || /AS[0-9]+/ || /[a-zA-Z0-9-]+\.[a-zA-Z]/ || /[0-9.]+ ms/)
+    '
 	echo -e "${Info} 测试路由 到 ${ISP_name} 完成 ！"
 }
 
